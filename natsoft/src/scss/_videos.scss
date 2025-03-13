@@ -1,0 +1,50 @@
+.videos {
+  padding: 0 10em;
+  padding-bottom: 12em;
+  display: flex;
+  justify-content: center;
+  @include m500 {
+    padding: 0 .5em;
+    padding-bottom: 7.5em;
+  }
+
+  .videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3em;
+
+    @include m500 {
+      margin-top: 0.5em;
+    }
+
+    .video{
+      margin-bottom: 30px;
+      width: 500px;
+      height: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+
+      @include m500 {
+        margin-bottom: 20px;
+        width: 380px;
+        height: 228px;
+      }
+
+      youtube-player{
+        width: 500px;
+        height: 300px;
+        @include m500 {
+          width: 380px;
+          height: 228px;
+        }
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 17px $grey;
+      }
+    }
+  }
+}

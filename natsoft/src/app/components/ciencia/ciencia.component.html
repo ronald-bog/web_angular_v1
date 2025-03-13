@@ -1,0 +1,15 @@
+<div class="news">
+  <div class="card-container">
+    <div *ngFor="let i of newsArray">
+      <a class="card" href="{{i.url}}" target="_blank">
+        <img class="img" src="{{i.urlToImage}}" alt="">
+        <h2>{{i.title}}</h2>
+        <p>{{i.description}}</p>
+        <p class="author">
+          Fuente: {{i.source.name}} &nbsp;|&nbsp;
+          {{i.author}}&nbsp;|&nbsp;
+          {{formatDate(i.publishedAt.substring(0, 10))}}.</p>
+      </a>
+    </div>
+  </div>
+</div>

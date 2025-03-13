@@ -1,0 +1,106 @@
+/* Botón burger */
+.burger {
+  position: absolute;
+  top: 0.9em;
+  right: 1em;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+
+  @include m720 {
+    display: block;
+  }
+
+  .barra {
+    width: 35px;
+    height: 2px;
+    margin: 8px;
+    background-color: $grey;
+    transition: 200ms all ease-in-out;
+  }
+
+  &.abierto {
+    .barra {
+      background-color: $grey;
+
+      &.superior {
+        transform: translateY(10px) rotateZ(-45deg);
+      }
+
+      &.media {
+        width: 0;
+      }
+
+      &.inferior {
+        transform: translateY(-10px) rotateZ(45deg);
+      }
+    }
+  }
+}
+
+/* Menú lateral */
+.menu {
+  width: 100vw;
+  height: 100vh;
+  top: 3m;
+  background-color: $black;
+  position: fixed;
+  left: 250em;
+  padding-top: 1px;
+  transition: all 100ms ease-in-out;
+  z-index: 998;
+
+  &.abierto {
+    left: 0;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    .theme-burguer {
+      width: 100vw;
+      height: 5em;
+      background-image: url('#{$moonB}');
+      background-repeat: no-repeat;
+      background-size: 1.5em;
+      background-position: center;
+      margin-bottom: 3em ;
+    }
+
+    a {
+      display: flex;
+      padding: 1rem 0;
+      color: $white;
+      font-size: 1.1rem;
+      transition: 300ms all ease-in-out;
+      text-decoration: none;
+      justify-content: center;
+      &.active {
+        color: $black;
+        background-color: $titleNews;
+        margin-bottom: -0.1em;
+      }
+    }
+
+    :hover {
+      color: $grey;
+    }
+
+    hr {
+      width: 100%;
+      border-color: $grey;
+    }
+  }
+
+  button {
+    background-color: $grey;
+    color: white;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 0;
+    font-size: 20pt;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="header">
+  <div class="logo"></div>
+
+  <div class="nav">
+    <div [routerLinkActive]="'active'" class="link" routerLink="cursos">Cursos</div>
+    <div [routerLinkActive]="'active'" class="link" routerLink="tecnologia">Tecnología</div>
+    <div [routerLinkActive]="'active'" class="link" routerLink="ciencia">Ciencia</div>
+    <div [routerLinkActive]="'active'" class="link" routerLink="videos">Videos</div>
+    <div [routerLinkActive]="'active'" class="link" routerLink="demos">Demos</div>
+  </div>
+
+  <div class="rrss">
+    <a class="youtube" href="https://www.youtube.com/@natsoftx" target="_blank"></a>
+    <a class="facebook" href="https://www.facebook.com/natsoftx" target="_blank"></a>
+    <a class="x" href="https://twitter.com/natsoftx" target="_blank"></a>
+    <a class="instagram" href="https://www.instagram.com/natsoft/" target="_blank"></a>
+    <a class="threads" href="https://www.threads.net/@natsoft" target="_blank"></a>
+  </div>
+  <div *ngIf="componentCssClass === 'light'" (click)="theme('dark')" class="theme"></div>
+  <div *ngIf="componentCssClass === 'dark'" (click)="theme('light')" class="theme"></div>
+</div>
+
+<!-- burguer menu -->
+
+<div (click)="toggleMenu()" [ngClass]="{ 'abierto': isBurgerOpen }" class="burger">
+  <div class="barra superior"></div>
+  <div class="barra media"></div>
+  <div class="barra inferior"></div>
+</div>
+<div class="menu" [ngClass]="{ 'abierto': isMenuOpen }">
+  <nav>
+    <div *ngIf="componentCssClass === 'light'" (click)="theme('dark')" class="theme-burguer"></div>
+    <div *ngIf="componentCssClass === 'dark'" (click)="theme('light')" class="theme-burguer"></div>
+    <hr>
+    <a [routerLinkActive]="'active'" routerLink="cursos" (click)="toggleMenu()">Cursos</a>
+    <hr>
+    <a [routerLinkActive]="'active'" routerLink="tecnologia" (click)="toggleMenu()">Tecnología</a>
+    <hr>
+    <a [routerLinkActive]="'active'" routerLink="ciencia" (click)="toggleMenu()">Ciencia</a>
+    <hr>
+    <a [routerLinkActive]="'active'" routerLink="videos" (click)="toggleMenu()">Videos</a>
+    <hr>
+    <a [routerLinkActive]="'active'" routerLink="demos" (click)="toggleMenu()">Demos</a>
+    <hr>
+  </nav>
+</div>
